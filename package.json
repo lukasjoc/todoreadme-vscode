@@ -1,0 +1,43 @@
+{
+  "name": "todoreadme",
+  "displayName": "todoreadme",
+  "description": "todoreadme language support for vscode",
+  "version": "0.1.0",
+  "author": "lukasjoc",
+  "license": "MIT",
+  "scripts": {
+    "build": "vsce package -o todoreadme-language.vsix"
+  },
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "todoreadme",
+        "aliases": [
+          "todoreadme",
+          "todoreadme"
+        ],
+        "extensions": [
+          "tor",
+          "todoreadme"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "todoreadme",
+        "scopeName": "source.todoreadme",
+        "path": "./syntaxes/todoreadme.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.18.0"
+  }
+}

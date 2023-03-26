@@ -1,0 +1,65 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "todoreadme",
+	"patterns": [
+		{
+			"begin": "^(?=[^\\s])",
+			"end": "$",
+			"name": "block",
+			"patterns": [
+				{
+					"match": "\\b(current|task|idea|later|til)\\b",
+					"name": "keyword"
+				},
+				{
+					"match": "(\\[)([a-zA-Z0-9-_]+)(,?)(\\])",
+					"captures": {
+						"2": {
+							"name": "category"
+						}
+					}
+				},
+				{
+					"match": "^([a-zA-Z0-9-_]+):",
+					"captures": {
+						"1": {
+							"name": "identifier"
+						}
+					}
+				},
+				{
+					"match": "^([a-zA-Z0-9-_]+):\\s+(.*)$",
+					"captures": {
+						"1": {
+							"name": "identifier"
+						},
+						"2": {
+							"name": "text"
+						}
+					}
+				},
+				{
+					"match": "^-\\s+(.*)$",
+					"captures": {
+						"1": {
+							"name": "text"
+						}
+					}
+				},
+				{
+					"match": "^\\|\\s+(.*)$",
+					"captures": {
+						"1": {
+							"name": "text"
+						}
+					}
+				},
+				{
+					"match": ".*",
+					"name": "text"
+				}
+			]
+		}
+	],
+	"scopeName": "source.todoreadme"
+}
